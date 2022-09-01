@@ -3,18 +3,18 @@ const { readAndAppend } = require("../helpers/fsUtils");
 const uuid = require('../helpers/uuid');
 
 //GET request
-router.get("/", (req, res) =>
+router.get("/api/notes", (req, res) =>
   readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)))
 );
 
 //POST request
-router.post("/", (req, res) => {
+router.post("/api/notes", (req, res) => {
   const { title, text } = req.body;
 
-  if (title && text) {
+  if (req.body) {
     const newNote = {
-      title,
-      text,
+      notetitle,
+      notetext,
     };
     readAndAppend(newNote, "./db/db.json");
 
