@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { readAndAppend } = require("../helpers/fsUtils");
+const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
 
 //GET request
@@ -12,20 +12,21 @@ router.post("/api/notes", (req, res) => {
   const { title, text } = req.body;
 
   if (req.body) {
-    const newNote = {
+    const newData = {
       notetitle,
       notetext,
     };
-    readAndAppend(newNote, "./db/db.json");
+    readAndAppend(newData, "./db/db.json");
 
     const response = {
       status: "success",
-      body: newNote,
+      body: newData,
     };
 
     res.json(response);
-  } else {
+ } else {
     res.json("Error in posting note");
+  
   }
 });
 
