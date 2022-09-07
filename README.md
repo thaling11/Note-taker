@@ -23,6 +23,7 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 - Save icon appears in the navigation at the top of the page, and the new note entered is saved and appears in the left-hand column with the other existing notes
 - When the user clicks on an existing note in the list in the left-hand column, that note appears in the right-hand column
 - When the user clicks on the Write icon in the navigation at the top of the page, the user is presented with empty fields to enter a new note title and the note’s text in the right-hand column
+- When the user clicks the delete icon, the note is deleted
 
 
 
@@ -36,4 +37,4 @@ The following images show the web application's appearance and functionality:
 
 
 ## Video Walkthrough
-https://drive.google.com/file/d/1xwRIG8vgv4wZYcsw_aQH4uPbK1_zzTrt/view
+https://drive.google.com/file/d/15Gkt-ONCdm-wZx0Iu5VNz7CK1gVy703K/view
