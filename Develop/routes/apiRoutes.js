@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
-const uuid = require('../helpers/uuid');
+const { readFromFile, readAndAppend } = require("../helpers/fsUtils");
+const uuid = require("../helpers/uuid");
 
 //GET request
 router.get("/notes", (req, res) =>
@@ -15,6 +15,7 @@ router.post("/notes", (req, res) => {
     const newData = {
       title,
       text,
+      id: uuid(),
     };
     readAndAppend(newData, "./db/db.json");
 
@@ -24,9 +25,8 @@ router.post("/notes", (req, res) => {
     };
 
     res.json(response);
- } else {
+  } else {
     res.json("Error in posting note");
-  
   }
 });
 
