@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { readFromFile, readAndAppend } = require("../helpers/fsUtils");
 const uuid = require("../helpers/uuid");
+const fs = require("fs");
 
 //GET request
 router.get("/notes", (req, res) =>
@@ -28,6 +29,14 @@ router.post("/notes", (req, res) => {
   } else {
     res.json("Error in posting note");
   }
+});
+
+//DELETE note
+router.delete("/notes/:id", (req, res) => {
+  let note = JSON.parse(fs.readFileSync("./db/db.json"));
+  let deleteNotes = note.filter((item) => item.id !== req.params.id);
+  fs.writeFileSync("./db/db.json", JSON.stringify(deleteNotes));
+  res.json(deleteNotes);
 });
 
 module.exports = router;
