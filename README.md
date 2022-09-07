@@ -36,3 +36,4 @@ The following images show the web application's appearance and functionality:
 
 
 ## Video Walkthrough
+https://drive.google.com/file/d/1xwRIG8vgv4wZYcsw_aQH4uPbK1_zzTrt/view
